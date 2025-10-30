@@ -48,7 +48,7 @@ export default function App() {
   useEffect(() => { enumerateCameras(); }, []);
 
   useEffect(() => {
-    const socket = new WebSocket("ws://localhost:8000/ws");
+    const socket = new WebSocket("wss://localhost:8000/ws");
     wsRef.current = socket;
 
     socket.onopen = () => console.log("WebSocket connected ✅");
