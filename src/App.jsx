@@ -208,7 +208,7 @@ export default function App() {
   // 🔊 Speak Filipino sentence
   const speakSentence = () => {
     if (!sentence) {
-      alert("Walang pangungusap na mabibigkas!");
+      alert("No Sentence!");
       return;
     }
     const utterance = new SpeechSynthesisUtterance(sentence);
@@ -221,7 +221,7 @@ export default function App() {
   return (
     <div style={{ display: "flex", justifyContent: "center", padding: 16 }}>
       <div className="container">
-        <h2 className="title">Sign Language Translation</h2>
+        <h2 className="title">SIGNLINK</h2>
         <div className="controls">
           <button className="btn" onClick={requestCameraAccess}>Request Camera</button>
           <select className="select" value={selectedDeviceId || ""} onChange={(e) => setSelectedDeviceId(e.target.value)}>
@@ -239,7 +239,7 @@ export default function App() {
           </div>
           <div className="textBox">
             <h4 className="subtitle">Formed Sentence</h4>
-            <div className="sentenceBox">{sentence || "Wala pang pangungusap..."}</div>
+            <div className="sentenceBox">{sentence || ""}</div>
             <div className="btnRow">
               <button className="btn secondary" onClick={() => { setSentence(""); setPrediction("..."); predictionHistoryRef.current = []; }}>Clear</button>
               <button className="btn success" onClick={speakSentence}>Speak</button>
